@@ -1,0 +1,23 @@
+{
+  "name": "booblie-recipes",
+  "version": "1.0.0",
+  "description": "Recipes for automated testing of Tangram components and Front-hub features",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && triven build",
+    "start": "npm run build && http-server ./dist -p 8181"
+  },
+  "keywords": [
+    "tangram",
+    "front-hub",
+    "testes automatizados",
+    "testing-library"
+  ],
+  "author": "Rafael Camargo <hello@rafaelcamargo.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@compilorama/triven": "^1.8.0",
+    "http-server": "^14.1.1"
+  }
+}
