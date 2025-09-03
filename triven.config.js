@@ -5,7 +5,8 @@ module.exports = {
   outputDirectory: './dist',
   lang: 'pt-BR',
   templates: {
-    homepage: './src/templates/homepage.html'
+    homepage: './src/templates/homepage.html',
+    article: './src/templates/article.html'
   },
   translations: {
     'pt-BR': {
