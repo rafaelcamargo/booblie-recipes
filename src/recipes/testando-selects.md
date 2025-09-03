@@ -80,7 +80,7 @@ expect(
 // dados enviado pelo formulário em questão.
 ```
 
-**Dica**: Na vida real, uma tela costuma ter muito mais elementos que apenas um `<Select />`, portanto, afim de evitar uam eventual colisão com os demais elementos, pode ser útil restringir a query ao `<Form.Control />` ao qual o `<Select />` pertence, usando a função utilitária `within`:
+**Dica**: Na vida real, uma tela costuma ter muito mais elementos que apenas um `<Select />`, portanto, afim de evitar uma eventual colisão com os demais elementos, pode ser útil restringir a query ao `<Form.Control />` ao qual o `<Select />` pertence, usando a função utilitária `within`:
 ``` javascript
 const colorSelectFormControl = container.querySelector(
   '#colorSelectFormControl',
