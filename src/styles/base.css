@@ -1,0 +1,15 @@
+.b-hero {
+  padding: 50px 0;
+  background-color: #F1F1F1;
+}
+
+.b-hero-content {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 660px;
+}
+
+.b-hero .b-logo {
+  display: flex;
+  width: 106px;
+}

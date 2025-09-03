@@ -4,7 +4,9 @@ module.exports = {
   sourceDirectory: './src/recipes',
   outputDirectory: './dist',
   lang: 'pt-BR',
-  homepagePostIntroType: 'description',
+  templates: {
+    homepage: './src/templates/homepage.html'
+  },
   translations: {
     'pt-BR': {
       availableRSSFeeds: 'RSS Feeds',
