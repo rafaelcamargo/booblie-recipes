@@ -1,0 +1,76 @@
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: cimg/node:18.19.0-browsers
+  working_directory: ~/app
+
+jobs:
+  install:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: Install
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - persist_to_workspace:
+          root: "."
+          paths:
+            - "package.json"
+            - "package-lock.json"
+            - "node_modules"
+            - ".git/*"
+            - ".circleci/*"
+            - "src/*"
+            - "triven.config.js"
+
+  build:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Build
+          command: NODE_ENV=production npm run build
+      - persist_to_workspace:
+          root: "."
+          paths:
+            - "dist/*"
+
+  deploy:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=dist
+
+workflows:
+  version: 2
+
+  branch-workflow:
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
