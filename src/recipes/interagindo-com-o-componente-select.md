@@ -15,7 +15,7 @@ Por não ser um *select* nativo, a interação com o componente `<Select />` do 
 
 ## Tentativa 1 (getByRole)
 
-Quem está familiarizado com a bilbioteca *Testing Library*, está acostumado a escrever uma interação bem simples para selecionar uma das opções exibidas por um select:
+Quem está familiarizado com a biblioteca *Testing Library*, está acostumado a escrever uma interação bem simples para selecionar uma das opções exibidas por um select:
 ``` javascript
 await userEvent.selectOptions(
   screen.getByRole('combobox', { name: 'Cor' }),
@@ -28,7 +28,7 @@ Porém, ao tentar usar essa estratégia em um `<Select />` do Tangram, você vai
 TestingLibraryElementError: Unable to find an accessible element with the role "combobox" and name "Cor"
 ```
 
-Isso ocorre porque o `</Select>` do Tangram não é exatamente um *select*, mas sim um *button*.
+Isso ocorre porque o `<Select />` do Tangram não é exatamente um *select*, mas sim um *button*.
 
 ## Tentativa 2 (getByLabelText)
 
@@ -49,7 +49,7 @@ Isso ocorre porque o `<Form.Label />` não se comunica corretamente com o elemen
 
 ## Solução
 
-Diante de todas estas peculiaridades e ainda que pareça contra-intuitivo, a maneira mais eficiente de interagir com um `<Select />` do Tangram nos testes automatizados é usando o *role* que de fato lhe foi atribuído: *button*:
+Diante de todas estas peculiaridades e ainda que pareça contraintuitivo, a maneira mais eficiente de interagir com um `<Select />` do Tangram nos testes automatizados é usando o *role* que de fato lhe foi atribuído: *button*:
 ``` javascript
 // 1. Clique no select como se ele fosse um botão usando
 // o texto de algum valor já selecionado ou do placeholder
@@ -77,10 +77,10 @@ expect(
 // Atenção: Esse último assert provavelmente não precisará
 // ser feito em seu teste, já que o valor do <Select/ >
 // acabará sendo garantido no assert que verifica os
-// dados enviado pelo formulário em questão.
+// dados enviados pelo formulário em questão.
 ```
 
-**Dica**: Na vida real, uma tela costuma ter muito mais elementos que apenas um `<Select />`, portanto, afim de evitar uma eventual colisão com os demais elementos, pode ser útil restringir a query ao `<Form.Control />` ao qual o `<Select />` pertence, usando a função utilitária `within`:
+**Dica**: Na vida real, uma tela costuma ter muito mais elementos que apenas um `<Select />`, portanto, a fim de evitar uma eventual colisão com os demais elementos, pode ser útil restringir a query ao `<Form.Control />` ao qual o `<Select />` pertence, usando a função utilitária `within`:
 ``` javascript
 const colorSelectFormControl = container.querySelector(
   '#colorSelectFormControl',
