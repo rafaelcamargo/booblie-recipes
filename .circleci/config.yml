@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: cimg/node:18.19.0-browsers
+    - image: cimg/node:22.5.1
   working_directory: ~/app
 
 jobs:

@@ -8,3 +8,16 @@ article .tn-footer {
   height: 0;
   text-indent: -9999px;
 }
+
+.b-recipe-suggestion-banner-wrapper {
+  margin: 50px auto;
+  max-width: 660px;
+  padding: 0 30px;
+}
+
+.b-recipe-suggestion-banner {
+  padding: 20px;
+  background-color: #E5F2FF;
+  color: #197FE6;
+  border-radius: 12px;
+}
