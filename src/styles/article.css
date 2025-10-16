@@ -4,6 +4,22 @@ nav {
   width: 106px;
 }
 
+p > img + br + em,
+p > video + em,
+p > picture + em {
+  display: block;
+  text-align: center;
+  font-size: 0.777777777777778rem;
+}
+
 .tn-footer {
   margin-bottom: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  p > img,
+  p > video,
+  p > picture {
+    border-radius: 8px;
+  }
 }
