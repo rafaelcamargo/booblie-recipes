@@ -16,6 +16,45 @@ p > picture + em {
   margin-bottom: 100px;
 }
 
+table {
+  display: block;
+  margin: 20px 0;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 16px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: #1f2328;
+}
+
+table tr {
+  background-color: #ffffff;
+  border-top: 1px solid #d1d9e0b3;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #d1d9e0;
+}
+
+table th,
+table strong {
+  font-weight: 600;
+}
+
+p + table,
+table + p {
+  margin-top: 30px;
+}
+
 @media screen and (min-width: 768px) {
   p > img,
   p > video,
