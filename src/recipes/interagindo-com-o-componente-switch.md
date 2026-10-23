@@ -1,6 +1,6 @@
 title: Interagindo com o componente Switch
 date: 2026-01-20
-description: Esta receia apresenta a maneira mais prática de interagir com o componente Switch em testes automatizados, utilizando role e label para garantir precisão e acessibilidade.
+description: Esta receita apresenta a maneira mais prática de interagir com o componente Switch em testes automatizados, utilizando role e label para garantir precisão e acessibilidade.
 keywords: testes, tangram, select, role, checkbox, switch
 
 ---
