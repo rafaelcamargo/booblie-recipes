@@ -5,7 +5,7 @@ keywords: testes, tangram, select, role, button
 
 ---
 
-Por não ser um *select* nativo, a interação com o componente `<Select />` do Trangram em um teste automatizado pode ser um pouco desafiadora.
+Por não ser um *select* nativo, a interação com o componente `<Select />` do Tangram em um teste automatizado pode ser um pouco desafiadora.
 
 <p>
   <video autoplay loop playsinline muted>

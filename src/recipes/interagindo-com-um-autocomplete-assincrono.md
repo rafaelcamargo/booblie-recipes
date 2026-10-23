@@ -1,6 +1,6 @@
 title: Interagindo com um Autocomplete assíncrono
 date: 2025-09-25
-description: O autcomplete é vastamente utilizado em nossas aplicações. Porém, ao interagir com este componente nos testes é preciso estar atento a algumas de suas peculiaridades. Este artigo detalha como fazer o mock dos dados a ser apresentado pelo autocomplete, bem como selecionar e limpar opções.
+description: O autocomplete é vastamente utilizado em nossas aplicações. Porém, ao interagir com este componente nos testes é preciso estar atento a algumas de suas peculiaridades. Este artigo detalha como fazer o mock dos dados a ser apresentado pelo autocomplete, bem como selecionar e limpar opções.
 keywords: autocomplete, testes, mock, filtro, assíncrono, Tangram
 
 ---
@@ -134,8 +134,6 @@ const handleUsersChange = (_, newValue) => {
 ```
 
 ## Limpando opções
-
-Conforme exibido nas linhas de teste acima, foi usado um nome em inglês para se obter o botão que abre as opções do *autocomplete*. Também de acordo com a documentação, o autocomplete não disponibiliza nenhuma propriedade que permita personalizar o nome daquele botão.
 
 Da mesma maneira que o botão que abre as opções, o botão que limpa o autocomplete (remove as opções selecionadas) também não permite a personalização de seu nome, exibindo um nome estático em inglês.
 
